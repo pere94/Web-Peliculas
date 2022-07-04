@@ -1,0 +1,19 @@
+{
+  "name": "web-peliculas",
+  "version": "1.0.0",
+  "description": "Web de peliculas usando api",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pere94/Web-Peliculas.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pere94/Web-Peliculas/issues"
+  },
+  "homepage": "https://github.com/pere94/Web-Peliculas#readme"
+}
