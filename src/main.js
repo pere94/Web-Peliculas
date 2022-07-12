@@ -260,6 +260,7 @@ setInterval(async function(){
 
 //Desplegando menu mobile
 let toque = 1;
+
 function desplegarMenu() {
   const nav_link_mobile = document.getElementById('nav_link-mobile');
   const nav_link_mobile_li = document.querySelectorAll('.nav_link-mobile-li');

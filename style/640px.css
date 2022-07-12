@@ -83,3 +83,8 @@ nav{
 .container_data section {
   top: -150px;
 }
+
+.contTrending__card-img {
+  width: 150px;
+  height: 250px;
+}
