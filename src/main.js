@@ -10,6 +10,9 @@ const actors_input = document.getElementById('contSearcher__filtros-actors');
 //more cards
 let current_page = 1;
 
+//Variables para dar estilos al CSS
+const icon_menu_nav = document.getElementById('icon-menu-nav');
+
 // //colocar fondo header peli top dia
 async function backgroundTop() {
 
@@ -254,6 +257,26 @@ setInterval(async function(){
 }, 5000);
 
 //------------------------------------------------------------------
+
+//Desplegando menu mobile
+let toque = 1;
+function desplegarMenu() {
+  const nav_link_mobile = document.getElementById('nav_link-mobile');
+  const nav_link_mobile_li = document.querySelectorAll('.nav_link-mobile-li');
+  if (toque == 1) {
+    nav_link_mobile.style.visibility = 'visible';
+    nav_link_mobile_li.forEach(item => item.style.padding = '8px');
+    toque++;
+  } else {
+    nav_link_mobile.style.visibility = 'hidden';
+    nav_link_mobile_li.forEach(item => item.style.padding = '0px');
+    toque = 1;
+  }
+  
+}
+
+icon_menu_nav.onclick = () => desplegarMenu();
+
 // COLOCAR BACKGROUND HEADER  
 backgroundTop();
 

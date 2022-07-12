@@ -62,7 +62,6 @@ nav {
 
 .nav_link li a:hover{
   text-decoration: 2px underline var(--azul1);
-
 }
 
 .header_container{
@@ -181,7 +180,7 @@ nav {
 }
 
 .h2Title {
-  font-size: 6rem;
+  font-size: var(--h2Title);
 }
 
 .h3Title{
@@ -675,3 +674,6 @@ footer div img{
   display: none;
 }
 
+.icon-menu-nav{
+  display: none;
+}
