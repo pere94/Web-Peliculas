@@ -5,8 +5,8 @@
   --azul3: #27496D;
   --azul4: #142850;
   --fondo: #0a0a12;
-  --font-sz-md: 1.8rem;
-  --font-sz-sm: 1.5rem;
+  --font-sz-md: 1.5rem;
+  --font-sz-sm: 1.3rem;
   --h1Title: 6rem;
   --h2Title: 4rem;
   --h3Title: 1.8rem;
@@ -87,4 +87,9 @@ nav{
 .contTrending__card-img {
   width: 150px;
   height: 250px;
+}
+
+.img_slide{
+  position: relative;
+  left: 0px;
 }

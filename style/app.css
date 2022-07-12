@@ -355,6 +355,7 @@ nav {
   font-size: var(--font-sz-sm);
   color: var(--azul3);
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 0 10px;
 

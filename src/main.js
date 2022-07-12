@@ -38,12 +38,12 @@ async function fetchTrandingMovie(time) {
   
   const response = await fetch(API_BASE + `/trending/movie/${time}?api_key=6b3aca2c2b68dc2a015ad5ccff3223f9`);
   const data = await response.json();
-
+  let cont_slide = 0;
   let view = `
     ${data.results.map(item => `
-      <article class="contTrending__card">
-        <a href="#"><img data-peli_id="${item.id}" id="imgTrend" class="contTrending__card-img" src="https://image.tmdb.org/t/p/w220_and_h330_face/${item.poster_path}" alt=""></a>
-        <a href="#"><h3 data-peli_id="${item.id}" id="h3Trend" class="h3Title heigth-h3-card">${item.title}</h3></a>        
+      <article class="contTrending__card img_slide">
+        <a href="#"><img data-peli_id="${item.id}" id="imgTrend" title="${item.title}" class="contTrending__card-img" src="https://image.tmdb.org/t/p/w220_and_h330_face/${item.poster_path}" alt=""></a>
+        <a href="#"><h3 data-peli_id="${item.id}" id="h3Trend" title="${item.title}" class="h3Title heigth-h3-card">${item.title}</h3></a>        
         <div class="contTrending__card-details">
           <p id="yearTrend0">${item.release_date}</p>
           <div class="contTrending__card-popularity">
@@ -126,7 +126,7 @@ async function fetchSearchMovie() {
   view1 = `
     ${data.results.map(item => `
       <article class="contTrending__card">
-        <a href="#"><img data-peli_id="${item.id}" id="imgTrend" class="contTrending__card-img" title="${item.original_title}" src="https://image.tmdb.org/t/p/w220_and_h330_face/${item.poster_path}" alt=""/></a>
+        <a href="#"><img data-peli_id="${item.id}" id="imgSearch" class="contTrending__card-img" title="${item.original_title}" src="https://image.tmdb.org/t/p/w220_and_h330_face/${item.poster_path}" alt=""/></a>
         <a href="#"><h3 data-peli_id="${item.id}" id="h3Trend" title="${item.original_title}" class="h3Title heigth-h3-card">${item.original_title}</h3></a>        
         <div class="contTrending__card-details">
           <p id="yearTrend0">${item.release_date}</p>
@@ -158,7 +158,7 @@ async function fetchSearchMovie() {
     let view = `
     ${data.results.map(item => `
       <article class="contTrending__card">
-        <a href="#"><img data-peli_id="${item.id}" id="imgTrend" class="contTrending__card-img" title="${item.original_title}" src="https://image.tmdb.org/t/p/w220_and_h330_face/${item.poster_path}" alt=""/></a>
+        <a href="#"><img data-peli_id="${item.id}" id="imgSearch" class="contTrending__card-img" title="${item.original_title}" src="https://image.tmdb.org/t/p/w220_and_h330_face/${item.poster_path}" alt=""/></a>
         <a href="#"><h3 data-peli_id="${item.id}" id="h3Trend" title="${item.original_title}" class="h3Title heigth-h3-card">${item.original_title}</h3></a>        
         <div class="contTrending__card-details">
           <p id="yearTrend0">${item.release_date}</p>
@@ -258,6 +258,7 @@ setInterval(async function(){
 
 //------------------------------------------------------------------
 
+
 //Desplegando menu mobile
 let toque = 1;
 
@@ -275,6 +276,12 @@ function desplegarMenu() {
   }
   
 }
+
+
+//------------------------------------------------------------------
+
+
+
 
 icon_menu_nav.onclick = () => desplegarMenu();
 
