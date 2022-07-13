@@ -163,6 +163,7 @@ nav{
 
 .movieDetails_img{
   margin-top: 20px;
+  max-width: 250px;
 }
 
 .movieDetails_containerOsc-center {
