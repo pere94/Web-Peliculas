@@ -93,3 +93,94 @@ nav{
   position: relative;
   left: 0px;
 }
+
+.filtros, .filtros p, .filtros select, .filtros input {
+  width: 130px;
+}
+
+.contSearcher__filtros-filtros button {
+  width: 130px;
+}
+
+.img_search_box{
+  width: 150px !important;
+  height: 250px !important;
+}
+
+.contTrending__card a {
+  width: 150px;
+}
+
+.article_search_box{
+  width: 150px !important;
+  margin-right: 10px !important;
+}
+
+.movieDetails_container-background {
+  height: 90%;
+}
+
+.movieDetails_containerOsc {
+  flex-direction: column;
+  height: 90%;
+  padding: 20px 15px 15px 15px;
+  overflow: scroll;
+  
+}
+
+.movieDetails_containerOsc-left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 20px;
+  position: relative;
+  z-index: 8;
+}
+
+/* Div contiene icon */
+#icon_cerrar_popup_mob{
+  display: flex;
+  justify-content: end;
+}
+
+.icon_cerrar_popup_des{
+  display: none;
+}
+
+.icon_cerrar_popup_mob{
+  display: flex;
+}
+
+.icon_cerrar_popup{
+  right: 0px;
+  top: -10px;
+}
+
+.movieDetails_containerOsc-left{
+  gap: 0px;
+}
+
+.movieDetails_img{
+  margin-top: 20px;
+}
+
+.movieDetails_containerOsc-center {
+  width: 100%;
+}
+
+.movieDetails_containerOsc-center-top {
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.movieDetails_produccionPeli-comp {
+  width: 250px;
+}
+
+.movieDetails_play {
+  right: 0px;
+  bottom: 0px;
+  margin-bottom: 15px;
+  margin-top: 20px;
+}

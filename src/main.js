@@ -125,8 +125,8 @@ async function fetchSearchMovie() {
   view1 = "";
   view1 = `
     ${data.results.map(item => `
-      <article class="contTrending__card">
-        <a href="#"><img data-peli_id="${item.id}" id="imgSearch" class="contTrending__card-img" title="${item.original_title}" src="https://image.tmdb.org/t/p/w220_and_h330_face/${item.poster_path}" alt=""/></a>
+      <article class="contTrending__card article_search_box">
+        <a href="#"><img data-peli_id="${item.id}" id="imgSearch" class="contTrending__card-img img_search_box" title="${item.original_title}" src="https://image.tmdb.org/t/p/w220_and_h330_face/${item.poster_path}" alt=""/></a>
         <a href="#"><h3 data-peli_id="${item.id}" id="h3Trend" title="${item.original_title}" class="h3Title heigth-h3-card">${item.original_title}</h3></a>        
         <div class="contTrending__card-details">
           <p id="yearTrend0">${item.release_date}</p>
@@ -157,8 +157,8 @@ async function fetchSearchMovie() {
   
     let view = `
     ${data.results.map(item => `
-      <article class="contTrending__card">
-        <a href="#"><img data-peli_id="${item.id}" id="imgSearch" class="contTrending__card-img" title="${item.original_title}" src="https://image.tmdb.org/t/p/w220_and_h330_face/${item.poster_path}" alt=""/></a>
+      <article class="contTrending__card article_search_box">
+        <a href="#"><img data-peli_id="${item.id}" id="imgSearch" class="contTrending__card-img img_search_box" title="${item.original_title}" src="https://image.tmdb.org/t/p/w220_and_h330_face/${item.poster_path}" alt=""/></a>
         <a href="#"><h3 data-peli_id="${item.id}" id="h3Trend" title="${item.original_title}" class="h3Title heigth-h3-card">${item.original_title}</h3></a>        
         <div class="contTrending__card-details">
           <p id="yearTrend0">${item.release_date}</p>
@@ -187,6 +187,7 @@ async function fetchSearchMovie() {
 setInterval(async function(){
   const movieDetails = document.getElementById('movieDetails');
   const icon_cerrar_popup = document.getElementById('icon_cerrar_popup');
+  const icon_cerrar_popup_mob = document.querySelector('.icon_cerrar_popup_mob');
   const cards = document.getElementsByClassName('contTrending__card');
   
   let ID_peli = "";
@@ -197,6 +198,7 @@ setInterval(async function(){
   }
 
   icon_cerrar_popup.onclick = cerrarPopup;
+  icon_cerrar_popup_mob.onclick = cerrarPopup;
 
   // funciones del setINterval----------
 
