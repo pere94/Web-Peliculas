@@ -184,3 +184,7 @@ nav{
   margin-bottom: 15px;
   margin-top: 20px;
 }
+
+footer div img {
+  width: 150px;
+}
