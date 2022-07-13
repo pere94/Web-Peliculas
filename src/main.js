@@ -10,6 +10,9 @@ const actors_input = document.getElementById('contSearcher__filtros-actors');
 //more cards
 let current_page = 1;
 
+//Variables para dar estilos al CSS
+const icon_menu_nav = document.getElementById('icon-menu-nav');
+
 // //colocar fondo header peli top dia
 async function backgroundTop() {
 
@@ -35,12 +38,12 @@ async function fetchTrandingMovie(time) {
   
   const response = await fetch(API_BASE + `/trending/movie/${time}?api_key=6b3aca2c2b68dc2a015ad5ccff3223f9`);
   const data = await response.json();
-
+  let cont_slide = 0;
   let view = `
     ${data.results.map(item => `
-      <article class="contTrending__card">
-        <a href="#"><img data-peli_id="${item.id}" id="imgTrend" class="contTrending__card-img" src="https://image.tmdb.org/t/p/w220_and_h330_face/${item.poster_path}" alt=""></a>
-        <a href="#"><h3 data-peli_id="${item.id}" id="h3Trend" class="h3Title heigth-h3-card">${item.title}</h3></a>        
+      <article class="contTrending__card img_slide">
+        <a href="#"><img data-peli_id="${item.id}" id="imgTrend" title="${item.title}" class="contTrending__card-img" src="https://image.tmdb.org/t/p/w220_and_h330_face/${item.poster_path}" alt=""></a>
+        <a href="#"><h3 data-peli_id="${item.id}" id="h3Trend" title="${item.title}" class="h3Title heigth-h3-card">${item.title}</h3></a>        
         <div class="contTrending__card-details">
           <p id="yearTrend0">${item.release_date}</p>
           <div class="contTrending__card-popularity">
@@ -122,8 +125,8 @@ async function fetchSearchMovie() {
   view1 = "";
   view1 = `
     ${data.results.map(item => `
-      <article class="contTrending__card">
-        <a href="#"><img data-peli_id="${item.id}" id="imgTrend" class="contTrending__card-img" title="${item.original_title}" src="https://image.tmdb.org/t/p/w220_and_h330_face/${item.poster_path}" alt=""/></a>
+      <article class="contTrending__card article_search_box">
+        <a href="#"><img data-peli_id="${item.id}" id="imgSearch" class="contTrending__card-img img_search_box" title="${item.original_title}" src="https://image.tmdb.org/t/p/w220_and_h330_face/${item.poster_path}" alt=""/></a>
         <a href="#"><h3 data-peli_id="${item.id}" id="h3Trend" title="${item.original_title}" class="h3Title heigth-h3-card">${item.original_title}</h3></a>        
         <div class="contTrending__card-details">
           <p id="yearTrend0">${item.release_date}</p>
@@ -154,8 +157,8 @@ async function fetchSearchMovie() {
   
     let view = `
     ${data.results.map(item => `
-      <article class="contTrending__card">
-        <a href="#"><img data-peli_id="${item.id}" id="imgTrend" class="contTrending__card-img" title="${item.original_title}" src="https://image.tmdb.org/t/p/w220_and_h330_face/${item.poster_path}" alt=""/></a>
+      <article class="contTrending__card article_search_box">
+        <a href="#"><img data-peli_id="${item.id}" id="imgSearch" class="contTrending__card-img img_search_box" title="${item.original_title}" src="https://image.tmdb.org/t/p/w220_and_h330_face/${item.poster_path}" alt=""/></a>
         <a href="#"><h3 data-peli_id="${item.id}" id="h3Trend" title="${item.original_title}" class="h3Title heigth-h3-card">${item.original_title}</h3></a>        
         <div class="contTrending__card-details">
           <p id="yearTrend0">${item.release_date}</p>
@@ -184,6 +187,7 @@ async function fetchSearchMovie() {
 setInterval(async function(){
   const movieDetails = document.getElementById('movieDetails');
   const icon_cerrar_popup = document.getElementById('icon_cerrar_popup');
+  const icon_cerrar_popup_mob = document.querySelector('.icon_cerrar_popup_mob');
   const cards = document.getElementsByClassName('contTrending__card');
   
   let ID_peli = "";
@@ -194,6 +198,7 @@ setInterval(async function(){
   }
 
   icon_cerrar_popup.onclick = cerrarPopup;
+  icon_cerrar_popup_mob.onclick = cerrarPopup;
 
   // funciones del setINterval----------
 
@@ -254,6 +259,34 @@ setInterval(async function(){
 }, 5000);
 
 //------------------------------------------------------------------
+
+
+//Desplegando menu mobile
+let toque = 1;
+
+function desplegarMenu() {
+  const nav_link_mobile = document.getElementById('nav_link-mobile');
+  const nav_link_mobile_li = document.querySelectorAll('.nav_link-mobile-li');
+  if (toque == 1) {
+    nav_link_mobile.style.visibility = 'visible';
+    nav_link_mobile_li.forEach(item => item.style.padding = '8px');
+    toque++;
+  } else {
+    nav_link_mobile.style.visibility = 'hidden';
+    nav_link_mobile_li.forEach(item => item.style.padding = '0px');
+    toque = 1;
+  }
+  
+}
+
+
+//------------------------------------------------------------------
+
+
+
+
+icon_menu_nav.onclick = () => desplegarMenu();
+
 // COLOCAR BACKGROUND HEADER  
 backgroundTop();
 
